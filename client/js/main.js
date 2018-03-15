@@ -185,16 +185,11 @@ Meteor.subscribe("test");
         console.log("Form submitted");
         return false;
 
-      },
-        // izdzēst ierakstu
-      'click .increment': function(){
-          var selectedPlayer = Session.get('selectedPlayer');
-          Meteor.call("deleteResolutions", selectedPlayer);
       }
     });
 
 //testing template EVENTS
-    Template.db.events({  //izdzēst dokumentu no db
+    Template.testing.events({  //izdzēst dokumentu no db
       'click .player': function(){
           var playerId = this._id;
           Session.set('selectedPlayer', playerId);
@@ -208,6 +203,20 @@ Meteor.subscribe("test");
         Template.db.helpers({
           test: function(){
               return Test.find({});
+          }
+        });
+
+        Template.db.events({
+          // izdzēst ierakstu
+        'click .increment': function(){
+            var selectedPlayer = Session.get('selectedPlayer');
+            Meteor.call("deleteResolutions", selectedPlayer);
+          }
+        })
+
+        Template.testing.helpers({
+          isOwner: function(){
+            return this.owner === Meteor.userId();
           },
           'selectedClass': function(){
             var playerId = this._id;
@@ -216,14 +225,6 @@ Meteor.subscribe("test");
               return "selected"; //piešķir klasi ar kuru iekrāso izvēlēto
             }
           }
-        });
-
-        Template.testing.helpers({
-          //
-          isOwner: function(){
-            return this.owner === Meteor.userId();
-          },
-          //
         });
 
 //izveidot account
