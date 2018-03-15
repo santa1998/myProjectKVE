@@ -1,0 +1,19 @@
+#login-form{
+  background-color: #ECECEC;
+  margin-top: 15%;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+h2{
+  text-align: center;
+}
+
+div.password-restore{
+  text-align: center;
+}
+
+.input-field label {
+     color: #424242;
+   }

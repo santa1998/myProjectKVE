@@ -1,0 +1,21 @@
+<template name="db">
+  <h3>Database documents</h3>
+  <button class="increment">Delete</button>
+  {{#if currentUser}}
+    {{#each test}}
+      {{> testing}}
+    {{/each}}
+  {{else}}
+    {{> fail}}
+  {{/if}}
+</template>
+
+<template name="testing">
+  {{#if isOwner}}
+  <li class="player {{selectedClass}}">{{text}}</li>
+  {{/if}}
+</template>
+
+<template name="fail">
+  <p>Neesat autorizēts!</p>
+</template>
