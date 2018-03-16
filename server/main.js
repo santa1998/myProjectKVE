@@ -1,2 +1,2 @@
-import '../imports/api/collectiondetails.js';
+import '../imports/api/details.js';
 import '../imports/api/test.js';

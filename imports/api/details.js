@@ -2,14 +2,14 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
 //izveidot db
-Details = new Mongo.Collection('details'); //vārds, uzvārds
+export const Details = new Mongo.Collection('details'); //vārds, uzvārds
 
 if (Meteor.isServer) {
-  //padarīt db publisku
-//   Meteor.publish("details", function(){
-//     return Details.find({owner: this.userId}); //parādīt ierakstus, kas pieder konkrētajam lietotājam //
-//   });
-// }
+  // padarīt db publisku
+  Meteor.publish('details', function(){
+    return Details.find({owner: this.userId}); //parādīt ierakstus, kas pieder konkrētajam lietotājam // owner: this.userId
+  });
+}
 
 //Meteor metodes
  Meteor.methods({
@@ -30,4 +30,3 @@ if (Meteor.isServer) {
     //     Test.update(_id, {$set: {checked: checked}});
     // }
   });
-}

@@ -2,9 +2,9 @@
   <h3>Database documents</h3>
   <button class="increment">Delete</button>
   {{#if currentUser}}
-    {{#each test}}
-      {{> testing}}
-    {{/each}}
+      {{#each test}}
+        {{> testing}}
+      {{/each}}
   {{else}}
     {{> fail}}
   {{/if}}
@@ -14,6 +14,12 @@
   {{#if isOwner}}
   <li class="player {{selectedClass}}">{{text}}</li>
   {{/if}}
+</template>
+
+<template name="data">
+  <!-- {{#if isOwner}} -->
+  {{name}} {{surname}}
+  <!-- {{/if}} -->
 </template>
 
 <template name="fail">

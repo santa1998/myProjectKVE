@@ -5,7 +5,11 @@
         <li>
           <div class="light-blue darken-4 thin">
             <a href="/profile"><i class="material-icons left white-text">person_outline</i>
-              <span class="white-text name">Inguna Pastare</span>
+              <span class="white-text name">
+                {{#each details}}
+                  {{> data}}
+                {{/each}}
+              </span>
             </a>
           </div>
         </li>

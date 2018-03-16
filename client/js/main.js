@@ -1,25 +1,22 @@
 import { Test } from '../../imports/api/test.js';
+import { Details } from '../../imports/api/details.js';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import '../../imports/api/test.js';
+import '../../imports/api/details.js';
 
 if (Meteor.isClient) {
+  //parādīt dokumentus
 Meteor.subscribe("test");
-  // Template.db.onCreated(function bodyOnCreated() {
-  //   this.state = new ReactiveVar();
-  //
-  // });
-
-//parādīt dokumentus
+Meteor.subscribe("details");
 
 //main template EVENTS
     Template.Overview.events({
       'submit .new-resolution': function(event){  //izpildīt funkciju apstiprinot formu
         //saglabā mainīgajā ievadīto vērtību
          event.preventDefault();
-        //
         var title = event.target.texter.value;
         var title23 = event.target.text23.value;
         var title3 = event.target.text3.value;
@@ -206,13 +203,31 @@ Meteor.subscribe("test");
           }
         });
 
+        Template.Header.helpers({
+          details: function(){
+              return Details.find({});
+          }
+        });
+
+        Template.Profile.helpers({
+          details: function(){
+              return Details.find({});
+          }
+        });
+
         Template.db.events({
           // izdzēst ierakstu
         'click .increment': function(){
             var selectedPlayer = Session.get('selectedPlayer');
             Meteor.call("deleteResolutions", selectedPlayer);
           }
-        })
+        });
+
+        Template.data.helpers({
+          isOwner: function(){
+            return this.owner === Meteor.userId();
+          }
+        });
 
         Template.testing.helpers({
           isOwner: function(){
