@@ -21,6 +21,7 @@ if (Meteor.isServer) {
 //         owner: Meteor.userId()
 //       });
 //     },
+
 // //dzēst ierakstu no db
 //     deleteResolutions: function(_id){
 //       var tes = Test.findOne(_id); // atrast vienu ierakstu
