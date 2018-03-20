@@ -7,7 +7,7 @@ export const Details = new Mongo.Collection('details'); //vārds, uzvārds
 if (Meteor.isServer) {
   // padarīt db publisku
   Meteor.publish('details', function(){
-    return Details.find({owner: this.userId}); //parādīt ierakstus, kas pieder konkrētajam lietotājam // owner: this.userId
+    return Details.find({owner: this.userId}); //parādīt ierakstus, kas pieder konkrētajam lietotājam //
   });
 }
 
