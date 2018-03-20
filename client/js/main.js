@@ -277,9 +277,10 @@ Meteor.subscribe("details");
   Template.Header.events({
     'click .logout': function(event){ //nospiest pogu ar klasi "logout"
       event.preventDefault();
-      Meteor.logout(); //funkcija
+      Meteor.logout(function() {
+        FlowRouter.go('/login');
+      }),
       console.log('Logging out succesfull!');
-      FlowRouter.go('/login');
     }
   });
 
