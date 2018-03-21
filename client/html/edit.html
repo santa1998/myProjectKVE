@@ -3,4 +3,16 @@
   <div class="new-recipe-container">
     {{> quickForm collection=Recipes id="insertRecipeForm" type="insert" class="new-recipe-form"}}
   </div>
+  <div class="recip">
+    {{#if currentUser}}
+    <p>Is a current user</p>
+      {{#each recipes}}
+        <!-- {{#if isOwner}} -->
+          {{surname}}
+        <!-- {{/if}} -->
+      {{/each}}
+      {{else}}
+      <p>Not current user</p>
+    {{/if}}
+  </div>
 </template>

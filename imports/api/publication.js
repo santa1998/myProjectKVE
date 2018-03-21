@@ -5,7 +5,7 @@ import { Recipes } from '../../imports/api/Recipes.js';
 if (Meteor.isServer) {
   // This code only runs on the server
   Meteor.publish('recipes', function(){
-    return recipes.find({author: this.userId});
+    return recipes.find({}); //author: this.userId
   });
 }
 

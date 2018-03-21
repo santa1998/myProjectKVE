@@ -3,7 +3,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-export const Recipes = new Meteor.Collection('recipes');
+export const Recipes = new Meteor.Collection('recipes'); 
 
 Ingredient = new SimpleSchema({
   name: {

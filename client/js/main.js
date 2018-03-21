@@ -8,13 +8,13 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import '../../imports/api/test.js';
 import '../../imports/api/details.js';
 import '../../imports/api/Recipes.js';
-import '../js/publish.js';
+import '../../imports/api/publication.js';
 
 if (Meteor.isClient) {
   //parādīt dokumentus
 Meteor.subscribe("test");
 Meteor.subscribe("details");
-// Meteor.subscribe("recipes");
+Meteor.subscribe("recipes");
 
 //main template EVENTS
     Template.Overview.events({
@@ -222,7 +222,16 @@ Meteor.subscribe("details");
         Template.Edit.helpers({
           Recipes(){
             return Recipes;
-          }
+          },
+           recipes: ()=> {
+             return Recipes.find({});
+           },
+           recipes: function(){
+               return Recipes.find({});
+           }
+           // isOwner: function(){
+           //   return this.owner === Meteor.userId();
+           // }
         });
 
         Template.data.helpers({
