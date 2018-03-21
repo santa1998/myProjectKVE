@@ -7,12 +7,14 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import '../../imports/api/test.js';
 import '../../imports/api/details.js';
+import '../../imports/api/Recipes.js';
+import '../js/publish.js';
 
 if (Meteor.isClient) {
   //parādīt dokumentus
 Meteor.subscribe("test");
 Meteor.subscribe("details");
-Meteor.subscribe("recipes");
+// Meteor.subscribe("recipes");
 
 //main template EVENTS
     Template.Overview.events({
@@ -217,11 +219,9 @@ Meteor.subscribe("recipes");
           }
         });
 
-        Template.db.events({
-          // izdzēst ierakstu
-        'click .increment': function(){
-            var selectedPlayer = Session.get('selectedPlayer');
-            Meteor.call("deleteResolutions", selectedPlayer);
+        Template.Edit.helpers({
+          Recipes(){
+            return Recipes;
           }
         });
 
@@ -244,13 +244,14 @@ Meteor.subscribe("recipes");
           }
         });
 
-        //
-        Template.Edit.helpers({
-            Recipes(){
-              return Recipes;
-            }
+        Template.db.events({
+          // izdzēst ierakstu
+        'click .increment': function(){
+            var selectedPlayer = Session.get('selectedPlayer');
+            Meteor.call("deleteResolutions", selectedPlayer);
+          }
         });
-        //
+
 
 //izveidot account
   // Template.Register.events({  //register template events
