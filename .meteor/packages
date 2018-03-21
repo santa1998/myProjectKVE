@@ -26,3 +26,5 @@ accounts-ui
 accounts-password
 session
 reactive-dict
+aldeed:collection2
+aldeed:autoform

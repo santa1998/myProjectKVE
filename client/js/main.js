@@ -1,5 +1,6 @@
 import { Test } from '../../imports/api/test.js';
 import { Details } from '../../imports/api/details.js';
+import { Recipes } from '../../imports/api/Recipes.js';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
@@ -11,6 +12,7 @@ if (Meteor.isClient) {
   //parādīt dokumentus
 Meteor.subscribe("test");
 Meteor.subscribe("details");
+Meteor.subscribe("recipes");
 
 //main template EVENTS
     Template.Overview.events({
@@ -241,6 +243,14 @@ Meteor.subscribe("details");
             }
           }
         });
+
+        //
+        Template.Edit.helpers({
+            Recipes(){
+              return Recipes;
+            }
+        });
+        //
 
 //izveidot account
   // Template.Register.events({  //register template events
