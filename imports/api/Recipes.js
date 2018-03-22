@@ -3,7 +3,17 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 SimpleSchema.extendOptions(['autoform']);
 
-export const Recipes = new Meteor.Collection('recipes'); 
+export const Recipes = new Meteor.Collection('recipes');
+
+
+Recipes.allow({
+  insert: function(userId, doc){
+   return !!userId;
+ },
+   update: function(userId, doc){
+     return !!userId;
+   }
+  });
 
 Ingredient = new SimpleSchema({
   name: {
@@ -15,31 +25,34 @@ Ingredient = new SimpleSchema({
 RecipeSchema = new SimpleSchema({
 name: {
   type: String,
-  label: "Vārds"
+  label: "Vārds(obligāts)"
 },
-surame: {
+surname: {
   type: String,
-  label: "Uzvārds"
+  label: "Uzvārds(obligāts)"
 },
 school:{
   type: String,
-  label: "Skola"
+  label: "Skola(obligāts)"
 },
 subjects:{
   type: Array,
-  label: "Mācāmie priekšmeti"
+  label: "Mācāmie priekšmeti",
+  optional: true
 },
 'subjects.$': {
   type: Ingredient,
-   label: false
+   label: false,
+   optional: true
 },
 email:{
   type: String,
-  label: "E-pasts"
+  label: "E-pasts(obligāts)"
 },
 number: {
   type: Number,
-  label: "Tālrunis"
+  label: "Tālrunis",
+  optional: true
 },
 author: {
   type: String,
