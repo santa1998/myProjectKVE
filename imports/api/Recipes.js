@@ -67,3 +67,9 @@ author: {
 });
 
 Recipes.attachSchema( RecipeSchema );
+
+Meteor.methods({
+  updateCourse: function (userId, doc) {
+    Recipes.update(userId, {$set: doc});
+}
+});

@@ -10,20 +10,16 @@
 </head>
 
 <template name="db">
-  <h3>Database documents</h3>
+  <h3>Darba pārskati</h3>
   <button class="btn-floating btn-large waves-effect waves-light btn increment"><i class="material-icons">delete</i></button>
 
 <table>
   <tr>
-    <td>Pedagoga vārds, uzvārds
+    <td>Pedagoga vārds, uzvārds:
       {{#if currentUser}}
            {{#each test}}
-             <!-- {{#if isOwner}} -->
-               <li>{{text}}</li> <!-- class="player {{selectedClass}}"-->
-             <!-- {{/if}} -->
+               {{text}} <!-- class="player {{selectedClass}}"-->
            {{/each}}
-       {{else}}
-         {{> fail}}
        {{/if}}
     </td>
   </tr>
@@ -31,10 +27,8 @@
     <td>Mācāmie priekšmeti:
       {{#if currentUser}}
            {{#each test}}
-               <li>{{text2}}</li>
+               {{text2}}
            {{/each}}
-       {{else}}
-         {{> fail}}
        {{/if}}
     </td>
   </tr>
@@ -49,10 +43,8 @@
     <td>
       {{#if currentUser}}
            {{#each test}}
-               <li>{{text23}}</li>
+               {{text23}}
            {{/each}}
-       {{else}}
-         {{> fail}}
        {{/if}}
     </td>
   </tr>
@@ -61,10 +53,8 @@
     <td>
       {{#if currentUser}}
            {{#each test}}
-               <li>{{text3}}</li>
+              {{text3}}
            {{/each}}
-       {{else}}
-         {{> fail}}
        {{/if}}
     </td>
   </tr>
@@ -73,10 +63,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text4}}</li>
+            {{text4}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
    </td>
   </tr>
@@ -85,10 +73,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text5}}</li>
+            {{text5}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -100,11 +86,9 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text6}}</li>
+             {{text6}}
          {{/each}}
-     {{else}}
-       {{> fail}}
-     {{/if}}
+       {{/if}}
     </td>
   </tr>
   <tr>
@@ -112,10 +96,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text7}}</li>
+            {{text7}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -124,10 +106,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text8}}</li>
+             {{text8}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -136,10 +116,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text9}}</li>
+             {{text9}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -148,10 +126,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text10}}</li>
+             {{text10}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -170,28 +146,22 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text11}}</li>
+             {{text11}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text12}}</li>
+             {{text12}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text13}}</li>
+             {{text13}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -212,10 +182,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{checkboxx}}</li>
+             {{checkboxx}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -225,10 +193,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{checkboxx2}}</li>
+             {{checkboxx2}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -238,10 +204,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{checkboxx3}}</li>
+            {{checkboxx3}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -251,10 +215,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{checkboxx4}}</li>
+            {{checkboxx4}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -269,11 +231,9 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text14}}</li>
+             {{text14}}
          {{/each}}
-     {{else}}
-       {{> fail}}
-     {{/if}}
+       {{/if}}
     </td>
   </tr>
   <tr>
@@ -281,10 +241,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text15}}</li>
+             {{text15}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -293,10 +251,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text16}}</li>
+             {{text16}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -305,10 +261,8 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{text117}}</li>
+             {{text117}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -326,19 +280,15 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{tablee}}</li>
+             {{tablee}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{tablee2}}</li>
+             {{tablee2}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -346,19 +296,15 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{tablee3}}</li>
+             {{tablee3}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{tablee4}}</li>
+             {{tablee4}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -366,19 +312,15 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{tablee5}}</li>
+             {{tablee5}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{tablee6}}</li>
+             {{tablee6}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
@@ -387,28 +329,22 @@
 <b>6. Šajā mācību gadā biju apņēmies/usies apmeklēt citu kolēģu nodarbības: (nosaukt)</b>
 {{#if currentUser}}
    {{#each test}}
-       <li>{{inputt6}}</li>
+       {{inputt6}}
    {{/each}}
-{{else}}
- {{> fail}}
 {{/if}}
 <p>Mani secinājumi par redzēto un dzirdēto:
   {{#if currentUser}}
      {{#each test}}
-         <li>{{inputt61}}</li>
+         {{inputt61}}
      {{/each}}
-  {{else}}
-   {{> fail}}
   {{/if}}
-</p>
+  </p>
 <br>
 <p><b>7.Vai uzskatāt, ka kolēģu nodarbību apmeklēšana paaugstina Jūsu profesionālo kvalifikāciju?</b>
   {{#if currentUser}}
      {{#each test}}
-         <li>{{radioo}}</li>
+         {{radioo}}
      {{/each}}
-  {{else}}
-   {{> fail}}
   {{/if}}
 </p>
 <br>
@@ -422,35 +358,32 @@
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{textareaa8}}</li>
+             {{textareaa8}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
     <td>
       {{#if currentUser}}
          {{#each test}}
-             <li>{{textareaa81}}</li>
+             {{textareaa81}}
          {{/each}}
-     {{else}}
-       {{> fail}}
      {{/if}}
     </td>
   </tr>
 </table>
 <br>
-<p><b>9.Mani galvenie uzdevumi pedagoģiskā darba kvalitātes uzlabošanā nākamajā mācību gadā mācāmajā priekšmetā vai priekšmetos (obligāti jānorāda konkrēti 1-2 uzdevumi, izmantojot pašvērtējuma 5.punkta vai citus pašvērtējuma aspektus):</b>
+<p><b>9.Mani galvenie uzdevumi pedagoģiskā darba kvalitātes uzlabošanā nākamajā mācību gadā mācāmajā priekšmetā vai priekšmetos (obligāti jānorāda konkrēti 1-2 uzdevumi, izmantojot pašvērtējuma 5.punkta vai citus pašvērtējuma aspektus):</b></p>
   {{#if currentUser}}
      {{#each test}}
-         <li>{{textareaa9}}</li>
+         {{textareaa9}}
      {{/each}}
-  {{else}}
-   {{> fail}}
   {{/if}}
-</p>
-</template>
-
-<template name="fail">
-  <p>Neesat autorizēts!</p>
+<br>
+<br>
+  <b><em>Aizpildīšanas datums: </em></b>
+  {{#if currentUser}}
+     {{#each test}}
+         {{createdAt}}
+     {{/each}}
+  {{/if}}
 </template>

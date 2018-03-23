@@ -1,18 +1,15 @@
 import { Test } from '../../imports/api/test.js';
-import { Details } from '../../imports/api/details.js';
 import { Recipes } from '../../imports/api/Recipes.js';
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import '../../imports/api/test.js';
-import '../../imports/api/details.js';
 import '../../imports/api/Recipes.js';
 
 if (Meteor.isClient) {
   //parādīt dokumentus
 Meteor.subscribe("test");
-Meteor.subscribe("details");
 Meteor.subscribe("recipes");
 
 //main template EVENTS
@@ -105,17 +102,14 @@ Meteor.subscribe("recipes");
         Template.db.helpers({
           test: function(){
               return Test.find({});
-          },
-          // isOwner: function(){
-          //   return this.owner === Meteor.userId();
-          // },
-          'selectedClass': function(){
-            var playerId = this._id;
-            var selectedPlayer = Session.get('selectedPlayer');
-            if (playerId === selectedPlayer) {
-              return "selected"; //piešķir klasi ar kuru iekrāso izvēlēto
-            }
           }
+          // 'selectedClass': function(){
+          //   var playerId = this._id;
+          //   var selectedPlayer = Session.get('selectedPlayer');
+          //   if (playerId === selectedPlayer) {
+          //     return "selected"; //piešķir klasi ar kuru iekrāso izvēlēto
+          //   }
+          // }
         });
 
         Template.Header.helpers({
@@ -134,9 +128,6 @@ Meteor.subscribe("recipes");
            recipes: ()=> {
              return Recipes.find({});
            }
-           // updateRecipeId: funtion() {
-           //   return this._id;
-           // }
         });
 
         Template.Edit.helpers({
@@ -146,19 +137,22 @@ Meteor.subscribe("recipes");
            recipes: ()=> {
              return Recipes.find({});
            }
-           // recipes: function(){
-           //     return Recipes.find({});
-           // }
-           // isOwner: function(){
-           //   return this.owner === Meteor.userId();
-           // }
+        });
+
+        Template.EditFilledBlanks.helpers({
+          updateRecipeId: function() {
+            return this._id;
+          },
+          Recipes(){
+            return Recipes;
+          }
         });
 
         Template.db.events({
           // izdzēst ierakstu
         'click .increment': function(){
-            var selectedPlayer = Session.get('selectedPlayer');
-            Meteor.call("deleteResolutions", selectedPlayer);
+            // var selectedPlayer = Session.get('selectedPlayer');
+            // Meteor.call("deleteResolutions", selectedPlayer);
           },
             'click .player': function(){ ///izdzēst dokumentu no db
                 var playerId = this._id;
