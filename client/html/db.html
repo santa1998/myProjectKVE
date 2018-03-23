@@ -1,25 +1,454 @@
+<head>
+  <style>
+    table, tr, td{
+      border: 1px solid black;
+    }
+    th{
+      background-color: gray;
+    }
+  </style>
+</head>
+
 <template name="db">
   <h3>Database documents</h3>
-  <button class="increment">Delete</button>
+  <button class="btn-floating btn-large waves-effect waves-light btn increment"><i class="material-icons">delete</i></button>
+
+<table>
+  <tr>
+    <td>Pedagoga vārds, uzvārds
+      {{#if currentUser}}
+           {{#each test}}
+             <!-- {{#if isOwner}} -->
+               <li>{{text}}</li> <!-- class="player {{selectedClass}}"-->
+             <!-- {{/if}} -->
+           {{/each}}
+       {{else}}
+         {{> fail}}
+       {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Mācāmie priekšmeti:
+      {{#if currentUser}}
+           {{#each test}}
+               <li>{{text2}}</li>
+           {{/each}}
+       {{else}}
+         {{> fail}}
+       {{/if}}
+    </td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th colspan="2">1.Aktualizētas, papildinātas</th>
+  </tr>
+  <tr>
+    <td>Mācību priekšmetu programmas</td>
+    <td>
+      {{#if currentUser}}
+           {{#each test}}
+               <li>{{text23}}</li>
+           {{/each}}
+       {{else}}
+         {{> fail}}
+       {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Kvalifikācijas prakses programma</td>
+    <td>
+      {{#if currentUser}}
+           {{#each test}}
+               <li>{{text3}}</li>
+           {{/each}}
+       {{else}}
+         {{> fail}}
+       {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Praktisko mācību programmas</td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text4}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+   </td>
+  </tr>
+  <tr>
+    <td>Citi</td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text5}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <th colspan="2">Inovācijas nodarbību norisē (norādīt)</th>
+  </tr>
+  <tr>
+    <td>Teorētiskajās nodarbībās</td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text6}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Praktiskajos darbos</td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text7}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Patstāvīgajos darbos</td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text8}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Praktiskajās mācībās</td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text9}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Kvalifikācijas praksē</td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text10}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th colspan="3">2.Metodiskais darbs</th>
+  </tr>
+  <tr>
+    <td>Metodiskā materiāla nosaukums</td>
+    <td>Veids</td>
+    <td>Pielietojums</td>
+  </tr>
+  <tr>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text11}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text12}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text13}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th colspan="3">3.Audzēkņu gatavošana olimpiādēm vai konkursiem (gan ārpusskolas, gan nodaļā)</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Atzīmēt</td>
+    <td>Nosaukums, rezultāts</td>
+  </tr>
+  <tr>
+    <td><li>ieguva godalgotas vietas</li></td>
+    <td></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{checkboxx}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td><li>piedalījās olimpiādē vai konkursā, bet vietu nav</li></td>
+    <td></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{checkboxx2}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td><li>olimpiāde vai konkurss notika, bet audzēkņus negatavoju</li></td>
+    <td></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{checkboxx3}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td><li>negatavoju, jo olimpiāde vai konkurss nebija plānots</li></td>
+    <td></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{checkboxx4}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th colspan="2">4.Iesaistīšanās PVIN pasākumos</th>
+  </tr>
+  <tr>
+    <td><li>Pasākumi, kurus organizēju</li></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text14}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td><li>Pasākumos iesaistījos, piedalījos ar idejām, iniciatīvu, ierosmi</li></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text15}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td><li>Darīju, ko lika</li></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text16}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td><li>Nepiedalījos un neorganizēju</li></td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{text117}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th colspan="2">5.Manas pedagoģiskās darbības:</th>
+  </tr>
+  <tr>
+    <td>Stiprās puses (vizmaz 3)</td>
+    <td>Vājās puses (vizmaz 3)</td>
+  </tr>
+  <tr>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{tablee}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{tablee2}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{tablee3}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{tablee4}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{tablee5}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{tablee6}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+</table>
+<br>
+<b>6. Šajā mācību gadā biju apņēmies/usies apmeklēt citu kolēģu nodarbības: (nosaukt)</b>
+{{#if currentUser}}
+   {{#each test}}
+       <li>{{inputt6}}</li>
+   {{/each}}
+{{else}}
+ {{> fail}}
+{{/if}}
+<p>Mani secinājumi par redzēto un dzirdēto:
   {{#if currentUser}}
-      {{#each test}}
-        {{> testing}}
-      {{/each}}
+     {{#each test}}
+         <li>{{inputt61}}</li>
+     {{/each}}
   {{else}}
-    {{> fail}}
+   {{> fail}}
   {{/if}}
-</template>
-
-<template name="testing">
-  {{#if isOwner}}
-  <li class="player {{selectedClass}}">{{text}}</li>
+</p>
+<br>
+<p><b>7.Vai uzskatāt, ka kolēģu nodarbību apmeklēšana paaugstina Jūsu profesionālo kvalifikāciju?</b>
+  {{#if currentUser}}
+     {{#each test}}
+         <li>{{radioo}}</li>
+     {{/each}}
+  {{else}}
+   {{> fail}}
   {{/if}}
-</template>
-
-<template name="data">
-  <!-- {{#if isOwner}} -->
-  {{name}} {{surname}}
-  <!-- {{/if}} -->
+</p>
+<br>
+<b>8.Šajā mācību gadā plānotā pedagoģiskās meistarības uzlabošanā veicamo pasākumu izpildes analīze (no iepriekšējā gada pedagogu pārskata)</b>
+<table>
+  <tr>
+    <td>Šajā mācību gadā plānoju</td>
+    <td>Izpildīju (norādīt konkrēti)</td>
+  </tr>
+  <tr>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{textareaa8}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+    <td>
+      {{#if currentUser}}
+         {{#each test}}
+             <li>{{textareaa81}}</li>
+         {{/each}}
+     {{else}}
+       {{> fail}}
+     {{/if}}
+    </td>
+  </tr>
+</table>
+<br>
+<p><b>9.Mani galvenie uzdevumi pedagoģiskā darba kvalitātes uzlabošanā nākamajā mācību gadā mācāmajā priekšmetā vai priekšmetos (obligāti jānorāda konkrēti 1-2 uzdevumi, izmantojot pašvērtējuma 5.punkta vai citus pašvērtējuma aspektus):</b>
+  {{#if currentUser}}
+     {{#each test}}
+         <li>{{textareaa9}}</li>
+     {{/each}}
+  {{else}}
+   {{> fail}}
+  {{/if}}
+</p>
 </template>
 
 <template name="fail">

@@ -21,6 +21,7 @@ Meteor.subscribe("recipes");
         //saglabā mainīgajā ievadīto vērtību
          event.preventDefault();
         var title = event.target.texter.value;
+        var title2 = event.target.text2.value;
         var title23 = event.target.text23.value;
         var title3 = event.target.text3.value;
         var title4 = event.target.text4.value;
@@ -49,108 +50,19 @@ Meteor.subscribe("recipes");
         var table6 = event.target.inputtable6.value;
         var input6 = event.target.input6.value;
         var input61 = event.target.input61.value;
+        var radio = event.target.radio7.value;
         var textarea8 = event.target.textarea8.value;
         var textarea81 = event.target.textarea81.value;
         var textarea9 = event.target.textarea9.value;
         //izsauc metodi no server
-        if (!title == " ") {
-        Meteor.call("addResolutions",title);
-        }
-        if (!title23 == " ") {
-        Meteor.call("addResolutions", title23);
-        }
-        if (!title3 == " ") {
-        Meteor.call("addResolutions", title3);
-        }
-        if (!title4 == " ") {
-        Meteor.call("addResolutions", title4);
-        }
-        if (!title5 == " ") {
-        Meteor.call("addResolutions", title5);
-        }
-        if (!title6 == " ") {
-        Meteor.call("addResolutions", title6);
-        }
-        if (!title7 == " ") {
-        Meteor.call("addResolutions", title7);
-        }
-        if (!title8 == " ") {
-        Meteor.call("addResolutions", title8);
-        }
-        if (!title9 == " ") {
-        Meteor.call("addResolutions", title9);
-        }
-        if (!title10 == " ") {
-        Meteor.call("addResolutions", title10);
-        }
-        if (!title11 == " ") {
-        Meteor.call("addResolutions", title11);
-        }
-        if (!title12 == " ") {
-        Meteor.call("addResolutions", title12);
-        }
-        if (!title13 == " ") {
-        Meteor.call("addResolutions", title13);
-        }
-        if (!title14 == " ") {
-        Meteor.call("addResolutions", title14);
-        }
-        if (!title15 == " ") {
-        Meteor.call("addResolutions", title15);
-        }
-        if (!title16 == " ") {
-        Meteor.call("addResolutions", title16);
-        }
-        if (!title17 == " ") {
-        Meteor.call("addResolutions", title17);
-        }
-        if (!checkbox1 == " ") {
-        Meteor.call("addResolutions", checkbox1);
-        }
-        if (!checkbox2 == " ") {
-        Meteor.call("addResolutions", checkbox2);
-        }
-        if (!checkbox3 == " ") {
-        Meteor.call("addResolutions", checkbox3);
-        }
-        if (!checkbox4 == " ") {
-        Meteor.call("addResolutions", checkbox4);
-        }
-        if (!table1 == " ") {
-          Meteor.call("addResolutions",table1);
-        }
-        if (!table2 == " ") {
-          Meteor.call("addResolutions",table2);
-        }
-        if (!table3 == " ") {
-          Meteor.call("addResolutions",table3);
-        }
-        if (!table4 == " ") {
-          Meteor.call("addResolutions",table4);
-        }
-        if (!table5 == " ") {
-          Meteor.call("addResolutions",table5);
-        }
-        if (!table6 == " ") {
-          Meteor.call("addResolutions",table6);
-        }
-        if (!input6 == " ") {
-          Meteor.call("addResolutions",input6);
-        }
-        if (!input61 == " ") {
-          Meteor.call("addResolutions",input61);
-        }
-        if (!textarea8 == " ") {
-          Meteor.call("addResolutions",textarea8);
-        }
-        if (!textarea81 == " ") {
-          Meteor.call("addResolutions",textarea81);
-        }
-        if (!textarea9 == " ") {
-          Meteor.call("addResolutions",textarea9);
-        }
+        Meteor.call("addResolutions", title, title2, title23, title3, title4, title5, title6, title7, title8, title9, title10, title11, title12, title13, title14, title15, title16, title17, checkbox1, checkbox2, checkbox3, checkbox4, table1, table2, table3, table4, table5, table6, input6, input61, radio, textarea8, textarea81, textarea9, function(err, res){
+          if (!err) {
+          FlowRouter.go('/db');
+            }
+        });
         //izdzēst vērtību no input field
         event.target.texter.value="";
+        event.target.text2.value="";
         event.target.text23.value="";
         event.target.text3.value="";
         event.target.text4.value="";
@@ -179,30 +91,30 @@ Meteor.subscribe("recipes");
         event.target.inputtable6.value="";
         event.target.input6.value="";
         event.target.input61.value="";
+        event.target.radio7.value="";
         event.target.textarea8.value="";
         event.target.textarea81.value="";
         event.target.textarea9.value="";
         console.log("Form submitted");
         return false;
 
-      }
-    });
-
-//testing template EVENTS
-    Template.testing.events({  //izdzēst dokumentu no db
-      'click .player': function(){
-          var playerId = this._id;
-          Session.set('selectedPlayer', playerId);
         }
-//         'click .toggle-checked': function(){
-//           Meteor.call("updateResolutions", this._id, !this.checked);
-//         }
     });
 
     //main template HELPERS
         Template.db.helpers({
           test: function(){
               return Test.find({});
+          },
+          // isOwner: function(){
+          //   return this.owner === Meteor.userId();
+          // },
+          'selectedClass': function(){
+            var playerId = this._id;
+            var selectedPlayer = Session.get('selectedPlayer');
+            if (playerId === selectedPlayer) {
+              return "selected"; //piešķir klasi ar kuru iekrāso izvēlēto
+            }
           }
         });
 
@@ -221,7 +133,10 @@ Meteor.subscribe("recipes");
           },
            recipes: ()=> {
              return Recipes.find({});
-           },
+           }
+           // updateRecipeId: funtion() {
+           //   return this._id;
+           // }
         });
 
         Template.Edit.helpers({
@@ -239,31 +154,20 @@ Meteor.subscribe("recipes");
            // }
         });
 
-        Template.data.helpers({
-          isOwner: function(){
-            return this.owner === Meteor.userId();
-          }
-        });
-
-        Template.testing.helpers({
-          isOwner: function(){
-            return this.owner === Meteor.userId();
-          },
-          'selectedClass': function(){
-            var playerId = this._id;
-            var selectedPlayer = Session.get('selectedPlayer');
-            if (playerId === selectedPlayer) {
-              return "selected"; //piešķir klasi ar kuru iekrāso izvēlēto
-            }
-          }
-        });
-
         Template.db.events({
           // izdzēst ierakstu
         'click .increment': function(){
             var selectedPlayer = Session.get('selectedPlayer');
             Meteor.call("deleteResolutions", selectedPlayer);
-          }
+          },
+            'click .player': function(){ ///izdzēst dokumentu no db
+                var playerId = this._id;
+                Session.set('selectedPlayer', playerId);
+              }
+      //         'click .toggle-checked': function(){
+      //           Meteor.call("updateResolutions", this._id, !this.checked);
+      //         }
+
         });
 
 
