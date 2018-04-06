@@ -14,102 +14,46 @@ Meteor.subscribe("recipes");
 
 //main template EVENTS
     Template.Overview.events({
-      'submit .new-resolution': function(event){  //izpildīt funkciju apstiprinot formu
-        //saglabā mainīgajā ievadīto vērtību
-         event.preventDefault();
-        var title = event.target.texter.value;
-        var title2 = event.target.text2.value;
-        var title23 = event.target.text23.value;
-        var title3 = event.target.text3.value;
-        var title4 = event.target.text4.value;
-        var title5 = event.target.text5.value;
-        var title6 = event.target.text6.value;
-        var title7 = event.target.text7.value;
-        var title8 = event.target.text8.value;
-        var title9 = event.target.text9.value;
-        var title10 = event.target.text10.value;
-        var title11 = event.target.text11.value;
-        var title12 = event.target.text12.value;
-        var title13 = event.target.text13.value;
-        var title14 = event.target.text14.value;
-        var title15 = event.target.text15.value;
-        var title16 = event.target.text16.value;
-        var title17 = event.target.text17.value;
-        var checkbox1 = event.target.checkbox1text.value;
-        var checkbox2 = event.target.checkbox2text.value;
-        var checkbox3 = event.target.checkbox3text.value;
-        var checkbox4 = event.target.checkbox4text.value;
-        var table1 = event.target.inputtable1.value;
-        var table2 = event.target.inputtable2.value;
-        var table3 = event.target.inputtable3.value;
-        var table4 = event.target.inputtable4.value;
-        var table5 = event.target.inputtable5.value;
-        var table6 = event.target.inputtable6.value;
-        var input6 = event.target.input6.value;
-        var input61 = event.target.input61.value;
-        var radio = event.target.radio7.value;
-        var textarea8 = event.target.textarea8.value;
-        var textarea81 = event.target.textarea81.value;
-        var textarea9 = event.target.textarea9.value;
-        //izsauc metodi no server
-        Meteor.call("addResolutions", title, title2, title23, title3, title4, title5, title6, title7, title8, title9, title10, title11, title12, title13, title14, title15, title16, title17, checkbox1, checkbox2, checkbox3, checkbox4, table1, table2, table3, table4, table5, table6, input6, input61, radio, textarea8, textarea81, textarea9, function(err, res){
+      'submit .new-resolution': function(event){
+        var form = {};
+        $.each($('#test-form').serializeArray(), function() {
+          form[this.name] = this.value;
+        });
+    console.log(form);
+        event.preventDefault();
+        Meteor.call("addResolutions", {form: form}, function(err, res){
           if (!err) {
-          FlowRouter.go('/db');
+          FlowRouter.go('/dblist');
             }
         });
-        //izdzēst vērtību no input field
-        event.target.texter.value="";
-        event.target.text2.value="";
-        event.target.text23.value="";
-        event.target.text3.value="";
-        event.target.text4.value="";
-        event.target.text5.value="";
-        event.target.text6.value="";
-        event.target.text7.value="";
-        event.target.text8.value="";
-        event.target.text9.value="";
-        event.target.text10.value="";
-        event.target.text11.value="";
-        event.target.text12.value="";
-        event.target.text13.value="";
-        event.target.text14.value="";
-        event.target.text15.value="";
-        event.target.text16.value="";
-        event.target.text17.value="";
-        event.target.checkbox1text.value="";
-        event.target.checkbox2text.value="";
-        event.target.checkbox3text.value="";
-        event.target.checkbox4text.value="";
-        event.target.inputtable1.value="";
-        event.target.inputtable2.value="";
-        event.target.inputtable3.value="";
-        event.target.inputtable4.value="";
-        event.target.inputtable5.value="";
-        event.target.inputtable6.value="";
-        event.target.input6.value="";
-        event.target.input61.value="";
-        event.target.radio7.value="";
-        event.target.textarea8.value="";
-        event.target.textarea81.value="";
-        event.target.textarea9.value="";
         console.log("Form submitted");
         return false;
-
-        }
+      },
     });
 
-    //main template HELPERS
-        Template.db.helpers({
-          test: function(){
-              return Test.find({});
+        Template.db.events({
+        'click .increment': function(){
+          FlowRouter.go('/editdb');
           }
-          // 'selectedClass': function(){
-          //   var playerId = this._id;
-          //   var selectedPlayer = Session.get('selectedPlayer');
-          //   if (playerId === selectedPlayer) {
-          //     return "selected"; //piešķir klasi ar kuru iekrāso izvēlēto
-          //   }
-          // }
+        });
+
+        Template.db.helpers({
+          test: () => {
+           const test = Test.findOne(FlowRouter.current().params.id);
+           return test;
+         }
+        });
+
+        Template.DBList.helpers({
+          test: function(){
+            return Test.find({});
+          }
+        });
+
+        Template.DBList.events({
+          'click .select': function(){
+            FlowRouter.go('/db');
+          }
         });
 
         Template.Header.helpers({
@@ -138,33 +82,16 @@ Meteor.subscribe("recipes");
              return Recipes.find({});
            }
         });
-
-        Template.EditFilledBlanks.helpers({
-          updateRecipeId: function() {
-            return this._id;
-          },
-          Recipes(){
-            return Recipes;
-          }
-        });
-
-        Template.db.events({
-          // izdzēst ierakstu
-        'click .increment': function(){
-            // var selectedPlayer = Session.get('selectedPlayer');
-            // Meteor.call("deleteResolutions", selectedPlayer);
-          },
-            'click .player': function(){ ///izdzēst dokumentu no db
-                var playerId = this._id;
-                Session.set('selectedPlayer', playerId);
-              }
-      //         'click .toggle-checked': function(){
-      //           Meteor.call("updateResolutions", this._id, !this.checked);
-      //         }
-
-        });
-
-
+//
+        // Template.EditFilledBlanks.helpers({
+        //   updateRecipeId: function() {
+        //     return this._id;
+        //   },
+        //   Recipes(){
+        //     return Recipes;
+        //   }
+        // });
+//
 //izveidot account
   // Template.Register.events({  //register template events
   //    'submit form': function (event, template){ //apstiprināta forma

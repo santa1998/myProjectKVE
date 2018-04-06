@@ -6,5 +6,5 @@ import '../imports/api/test.js';
 import '../imports/api/Recipes.js';
 
 Meteor.publish('recipes', function(){
-  return Recipes.find({author: this.userId}); 
+  return Recipes.find({author: this.userId});
 });

@@ -10,26 +10,17 @@
 </head>
 
 <template name="db">
-  <h3>Darba pārskati</h3>
-  <button class="btn-floating btn-large waves-effect waves-light btn increment"><i class="material-icons">delete</i></button>
+  <button class="btn-floating btn-large waves-effect waves-light btn increment"><i class="material-icons">edit</i></button>
 
 <table>
   <tr>
     <td>Pedagoga vārds, uzvārds:
-      {{#if currentUser}}
-           {{#each test}}
-               {{text}} <!-- class="player {{selectedClass}}"-->
-           {{/each}}
-       {{/if}}
+               {{test.texter}}
     </td>
   </tr>
   <tr>
     <td>Mācāmie priekšmeti:
-      {{#if currentUser}}
-           {{#each test}}
-               {{text2}}
-           {{/each}}
-       {{/if}}
+               {{test.text2}}
     </td>
   </tr>
 </table>
@@ -41,41 +32,25 @@
   <tr>
     <td>Mācību priekšmetu programmas</td>
     <td>
-      {{#if currentUser}}
-           {{#each test}}
-               {{text23}}
-           {{/each}}
-       {{/if}}
+               {{test.text23}}
     </td>
   </tr>
   <tr>
     <td>Kvalifikācijas prakses programma</td>
     <td>
-      {{#if currentUser}}
-           {{#each test}}
-              {{text3}}
-           {{/each}}
-       {{/if}}
+              {{test.text3}}
     </td>
   </tr>
   <tr>
     <td>Praktisko mācību programmas</td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-            {{text4}}
-         {{/each}}
-     {{/if}}
+            {{test.text4}}
    </td>
   </tr>
   <tr>
     <td>Citi</td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-            {{text5}}
-         {{/each}}
-     {{/if}}
+            {{test.text5}}
     </td>
   </tr>
   <tr>
@@ -84,51 +59,31 @@
   <tr>
     <td>Teorētiskajās nodarbībās</td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text6}}
-         {{/each}}
-       {{/if}}
+             {{test.text6}}
     </td>
   </tr>
   <tr>
     <td>Praktiskajos darbos</td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-            {{text7}}
-         {{/each}}
-     {{/if}}
+            {{test.text7}}
     </td>
   </tr>
   <tr>
     <td>Patstāvīgajos darbos</td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text8}}
-         {{/each}}
-     {{/if}}
+             {{test.text8}}
     </td>
   </tr>
   <tr>
     <td>Praktiskajās mācībās</td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text9}}
-         {{/each}}
-     {{/if}}
+             {{test.text9}}
     </td>
   </tr>
   <tr>
     <td>Kvalifikācijas praksē</td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text10}}
-         {{/each}}
-     {{/if}}
+             {{test.text10}}
     </td>
   </tr>
 </table>
@@ -144,25 +99,13 @@
   </tr>
   <tr>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text11}}
-         {{/each}}
-     {{/if}}
+             {{test.text11}}
     </td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text12}}
-         {{/each}}
-     {{/if}}
+             {{test.text12}}
     </td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text13}}
-         {{/each}}
-     {{/if}}
+             {{tets.text13}}
     </td>
   </tr>
 </table>
@@ -178,46 +121,30 @@
   </tr>
   <tr>
     <td><li>ieguva godalgotas vietas</li></td>
-    <td></td>
+    <td id="ieguvagodalgotasvietas"></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{checkboxx}}
-         {{/each}}
-     {{/if}}
+             {{test.checkbox1text}}
     </td>
   </tr>
   <tr>
     <td><li>piedalījās olimpiādē vai konkursā, bet vietu nav</li></td>
     <td></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{checkboxx2}}
-         {{/each}}
-     {{/if}}
+             {{test.checkbox2text}}
     </td>
   </tr>
   <tr>
     <td><li>olimpiāde vai konkurss notika, bet audzēkņus negatavoju</li></td>
     <td></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-            {{checkboxx3}}
-         {{/each}}
-     {{/if}}
+            {{test.checkbox3text}}
     </td>
   </tr>
   <tr>
     <td><li>negatavoju, jo olimpiāde vai konkurss nebija plānots</li></td>
     <td></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-            {{checkboxx4}}
-         {{/each}}
-     {{/if}}
+            {{test.checkbox4text}}
     </td>
   </tr>
 </table>
@@ -229,41 +156,25 @@
   <tr>
     <td><li>Pasākumi, kurus organizēju</li></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text14}}
-         {{/each}}
-       {{/if}}
+             {{test.text14}}
     </td>
   </tr>
   <tr>
     <td><li>Pasākumos iesaistījos, piedalījos ar idejām, iniciatīvu, ierosmi</li></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text15}}
-         {{/each}}
-     {{/if}}
+             {{test.text15}}
     </td>
   </tr>
   <tr>
     <td><li>Darīju, ko lika</li></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text16}}
-         {{/each}}
-     {{/if}}
+             {{test.text16}}
     </td>
   </tr>
   <tr>
     <td><li>Nepiedalījos un neorganizēju</li></td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{text117}}
-         {{/each}}
-     {{/if}}
+             {{test.text17}}
     </td>
   </tr>
 </table>
@@ -278,74 +189,38 @@
   </tr>
   <tr>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{tablee}}
-         {{/each}}
-     {{/if}}
+             {{test.inputtable1}}
     </td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{tablee2}}
-         {{/each}}
-     {{/if}}
+             {{test.inputtable2}}
     </td>
   </tr>
   <tr>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{tablee3}}
-         {{/each}}
-     {{/if}}
+             {{test.inputtable3}}
     </td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{tablee4}}
-         {{/each}}
-     {{/if}}
+             {{test.inputtable4}}
     </td>
   </tr>
   <tr>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{tablee5}}
-         {{/each}}
-     {{/if}}
+             {{test.inputtable5}}
     </td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{tablee6}}
-         {{/each}}
-     {{/if}}
+             {{test.inputtable6}}
     </td>
   </tr>
 </table>
 <br>
 <b>6. Šajā mācību gadā biju apņēmies/usies apmeklēt citu kolēģu nodarbības: (nosaukt)</b>
-{{#if currentUser}}
-   {{#each test}}
-       {{inputt6}}
-   {{/each}}
-{{/if}}
+       {{test.input6}}
 <p>Mani secinājumi par redzēto un dzirdēto:
-  {{#if currentUser}}
-     {{#each test}}
-         {{inputt61}}
-     {{/each}}
-  {{/if}}
+         {{test.input61}}
   </p>
 <br>
 <p><b>7.Vai uzskatāt, ka kolēģu nodarbību apmeklēšana paaugstina Jūsu profesionālo kvalifikāciju?</b>
-  {{#if currentUser}}
-     {{#each test}}
-         {{radioo}}
-     {{/each}}
-  {{/if}}
+         {{test.radio7}}
 </p>
 <br>
 <b>8.Šajā mācību gadā plānotā pedagoģiskās meistarības uzlabošanā veicamo pasākumu izpildes analīze (no iepriekšējā gada pedagogu pārskata)</b>
@@ -356,34 +231,18 @@
   </tr>
   <tr>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{textareaa8}}
-         {{/each}}
-     {{/if}}
+             {{test.textarea8}}
     </td>
     <td>
-      {{#if currentUser}}
-         {{#each test}}
-             {{textareaa81}}
-         {{/each}}
-     {{/if}}
+             {{test.textarea81}}
     </td>
   </tr>
 </table>
 <br>
 <p><b>9.Mani galvenie uzdevumi pedagoģiskā darba kvalitātes uzlabošanā nākamajā mācību gadā mācāmajā priekšmetā vai priekšmetos (obligāti jānorāda konkrēti 1-2 uzdevumi, izmantojot pašvērtējuma 5.punkta vai citus pašvērtējuma aspektus):</b></p>
-  {{#if currentUser}}
-     {{#each test}}
-         {{textareaa9}}
-     {{/each}}
-  {{/if}}
+         {{test.textarea9}}
 <br>
 <br>
   <b><em>Aizpildīšanas datums: </em></b>
-  {{#if currentUser}}
-     {{#each test}}
-         {{createdAt}}
-     {{/each}}
-  {{/if}}
+         {{test.createdAt}}
 </template>

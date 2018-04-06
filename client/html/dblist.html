@@ -1,0 +1,8 @@
+<template name="DBList">
+    <h3>Darba pārskati</h3>
+    {{#if currentUser}}
+      {{#each test}}
+          <a class="select" href="/db/{{_id}}">{{createdAt}}</a><br>
+      {{/each}}
+    {{/if}}
+</template>
