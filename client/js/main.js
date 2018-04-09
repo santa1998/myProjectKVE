@@ -29,6 +29,9 @@ Meteor.subscribe("recipes");
         console.log("Form submitted");
         return false;
       },
+      'change input': function(){
+        Session.set('showIcon', true);
+      }
     });
 
         Template.db.events({
@@ -41,7 +44,10 @@ Meteor.subscribe("recipes");
           test: () => {
            const test = Test.findOne(FlowRouter.current().params.id);
            return test;
-         }
+         },
+         'equals':  function(a, b) {
+            return a === b;
+          }
         });
 
         Template.DBList.helpers({
@@ -82,16 +88,7 @@ Meteor.subscribe("recipes");
              return Recipes.find({});
            }
         });
-//
-        // Template.EditFilledBlanks.helpers({
-        //   updateRecipeId: function() {
-        //     return this._id;
-        //   },
-        //   Recipes(){
-        //     return Recipes;
-        //   }
-        // });
-//
+        
 //izveidot account
   // Template.Register.events({  //register template events
   //    'submit form': function (event, template){ //apstiprināta forma

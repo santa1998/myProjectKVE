@@ -121,28 +121,44 @@
   </tr>
   <tr>
     <td><li>ieguva godalgotas vietas</li></td>
-    <td id="ieguvagodalgotasvietas"></td>
+    <td>
+      {{#if equals test.checkbox111 'on'}}
+        <i class="material-icons">check</i>
+      {{/if}}
+    </td>
     <td>
              {{test.checkbox1text}}
     </td>
   </tr>
   <tr>
     <td><li>piedalījās olimpiādē vai konkursā, bet vietu nav</li></td>
-    <td></td>
+    <td>
+      {{#if equals test.checkbox222 'on'}}
+        <i class="material-icons">check</i>
+      {{/if}}
+    </td>
     <td>
              {{test.checkbox2text}}
     </td>
   </tr>
   <tr>
     <td><li>olimpiāde vai konkurss notika, bet audzēkņus negatavoju</li></td>
-    <td></td>
+    <td>
+      {{#if equals test.checkbox333 'on'}}
+        <i class="material-icons">check</i>
+      {{/if}}
+    </td>
     <td>
             {{test.checkbox3text}}
     </td>
   </tr>
   <tr>
     <td><li>negatavoju, jo olimpiāde vai konkurss nebija plānots</li></td>
-    <td></td>
+    <td>
+      {{#if equals test.checkbox444 'on'}}
+        <i class="material-icons">check</i>
+      {{/if}}
+    </td>
     <td>
             {{test.checkbox4text}}
     </td>
@@ -220,8 +236,14 @@
   </p>
 <br>
 <p><b>7.Vai uzskatāt, ka kolēģu nodarbību apmeklēšana paaugstina Jūsu profesionālo kvalifikāciju?</b>
-         {{test.radio7}}
 </p>
+{{#if equals test.group1 'on'}}
+  <p>Jā</p>
+  {{else}}
+    {{#if equals test.group2 'on'}}
+    <p>Nē</p>
+    {{/if}}
+{{/if}}
 <br>
 <b>8.Šajā mācību gadā plānotā pedagoģiskās meistarības uzlabošanā veicamo pasākumu izpildes analīze (no iepriekšējā gada pedagogu pārskata)</b>
 <table>
