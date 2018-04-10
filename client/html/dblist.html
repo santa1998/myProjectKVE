@@ -2,7 +2,9 @@
     <h3>Darba pārskati</h3>
     {{#if currentUser}}
       {{#each test}}
-          <a class="select" href="/db/{{_id}}">{{createdAt}}</a><br>
+          <a class="select" href="/db/{{_id}}">{{createdAt}}</a>
+          <button class="btn-floating btn-large waves-effect waves-light btn increment"><i class="material-icons">delete</i></button>
+          <br>
       {{/each}}
     {{/if}}
 </template>
