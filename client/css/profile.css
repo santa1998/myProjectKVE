@@ -1,11 +1,23 @@
-/* .card{
-  width: 30%;
-} */
-
-#profile_edit , #profile_add{
-  margin-top: 25%;
+#profile_edit , #profile_add {
+  margin-top: 35%;
+  margin-left: 35%;
+  transition: transform .2s;
 }
 
 a {
   color: black;
+}
+
+#signIn {
+  text-align: center;
+}
+
+#profile_edit:hover {
+  transform: scale(1.5);
+  transition-duration: 0.3s;
+}
+
+#profile_add:hover {
+  transform: scale(1.5);
+  transition-duration: 0.3s;
 }

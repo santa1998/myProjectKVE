@@ -1,37 +1,37 @@
-<head>
-  <style>
-    table, tr, td{
-      border: 1px solid black;
-    }
-    th{
-      background-color: gray;
-    }
-  </style>
-</head>
-
 <template name="db">
-<table>
-  <tr>
-    <td>Pedagoga vārds, uzvārds:
-               {{test.texter}}
-    </td>
-  </tr>
-  <tr>
-    <td>Mācāmie priekšmeti:
-               {{test.text2}}
-    </td>
-  </tr>
-</table>
-<br>
-<table>
-  <tr>
-    <th colspan="2">1.Aktualizētas, papildinātas</th>
-  </tr>
-  <tr>
-    <td>Mācību priekšmetu programmas</td>
-    <td>
-               {{test.text23}}
-    </td>
+  <a href="#" class="go-top" style="display: none;"><i class="material-icons medium">arrow_upward</i></a>
+  <div class="container">
+    <h4>Dārba pārskats</h4>
+    <hr>
+    <br>
+    <table class="highlight">
+      <tbody>
+      <tr>
+        <td>Pedagoga vārds, uzvārds:
+          {{test.texter}}
+        </td>
+      </tr>
+      <tr>
+        <td>Mācāmie priekšmeti:
+          {{test.text2}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <table class="highlight">
+      <thead>
+      <tr>
+        <th colspan="2" class="center-align">1.Aktualizētas, papildinātas
+        </th>
+        </tr>
+      </thead>
+        <tbody>
+        <tr>
+        <td>Mācību priekšmetu programmas</td>
+        <td>
+          {{test.text23}}
+        </td>
   </tr>
   <tr>
     <td>Kvalifikācijas prakses programma</td>
@@ -52,7 +52,7 @@
     </td>
   </tr>
   <tr>
-    <th colspan="2">Inovācijas nodarbību norisē (norādīt)</th>
+    <th colspan="2" class="center-align">Inovācijas nodarbību norisē (norādīt)</th>
   </tr>
   <tr>
     <td>Teorētiskajās nodarbībās</td>
@@ -84,12 +84,14 @@
              {{test.text10}}
     </td>
   </tr>
+</tbody>
 </table>
 <br>
-<table>
+<table class="highlight">
   <tr>
-    <th colspan="3">2.Metodiskais darbs</th>
+    <th colspan="3" class="center-align">2.Metodiskais darbs</th>
   </tr>
+  <tbody>
   <tr>
     <td>Metodiskā materiāla nosaukums</td>
     <td>Veids</td>
@@ -106,11 +108,13 @@
              {{test.text13}}
     </td>
   </tr>
+</tbody>
 </table>
 <br>
-<table>
+<table class="highlight">
+  <tbody>
   <tr>
-    <th colspan="3">3.Audzēkņu gatavošana olimpiādēm vai konkursiem (gan ārpusskolas, gan nodaļā)</th>
+    <th colspan="3" class="center-align">3.Audzēkņu gatavošana olimpiādēm vai konkursiem (gan ārpusskolas, gan nodaļā)</th>
   </tr>
   <tr>
     <td></td>
@@ -118,10 +122,10 @@
     <td>Nosaukums, rezultāts</td>
   </tr>
   <tr>
-    <td><li>ieguva godalgotas vietas</li></td>
-    <td>
+    <td>ieguva godalgotas vietas</td>
+    <td class="center-align">
       {{#if equals test.checkbox111 'on'}}
-        <i class="material-icons">check</i>
+        <i class="material-icons center-align">check</i>
       {{/if}}
     </td>
     <td>
@@ -129,10 +133,10 @@
     </td>
   </tr>
   <tr>
-    <td><li>piedalījās olimpiādē vai konkursā, bet vietu nav</li></td>
-    <td>
+    <td>piedalījās olimpiādē vai konkursā, bet vietu nav</td>
+    <td class="center-align">
       {{#if equals test.checkbox222 'on'}}
-        <i class="material-icons">check</i>
+        <i class="material-icons center-align">check</i>
       {{/if}}
     </td>
     <td>
@@ -140,10 +144,10 @@
     </td>
   </tr>
   <tr>
-    <td><li>olimpiāde vai konkurss notika, bet audzēkņus negatavoju</li></td>
-    <td>
+    <td>olimpiāde vai konkurss notika, bet audzēkņus negatavoju</td>
+    <td class="center-align">
       {{#if equals test.checkbox333 'on'}}
-        <i class="material-icons">check</i>
+        <i class="material-icons center-align">check</i>
       {{/if}}
     </td>
     <td>
@@ -151,8 +155,8 @@
     </td>
   </tr>
   <tr>
-    <td><li>negatavoju, jo olimpiāde vai konkurss nebija plānots</li></td>
-    <td>
+    <td>negatavoju, jo olimpiāde vai konkurss nebija plānots</td>
+    <td class="center-align">
       {{#if equals test.checkbox444 'on'}}
         <i class="material-icons">check</i>
       {{/if}}
@@ -161,41 +165,45 @@
             {{test.checkbox4text}}
     </td>
   </tr>
+</tbody>
 </table>
 <br>
-<table>
+<table class="highlight">
+  <tbody>
   <tr>
-    <th colspan="2">4.Iesaistīšanās PVIN pasākumos</th>
+    <th colspan="2" class="center-align">4.Iesaistīšanās PVIN pasākumos</th>
   </tr>
   <tr>
-    <td><li>Pasākumi, kurus organizēju</li></td>
+    <td>Pasākumi, kurus organizēju</td>
     <td>
              {{test.text14}}
     </td>
   </tr>
   <tr>
-    <td><li>Pasākumos iesaistījos, piedalījos ar idejām, iniciatīvu, ierosmi</li></td>
+    <td>Pasākumos iesaistījos, piedalījos ar idejām, iniciatīvu, ierosmi</td>
     <td>
              {{test.text15}}
     </td>
   </tr>
   <tr>
-    <td><li>Darīju, ko lika</li></td>
+    <td>Darīju, ko lika</td>
     <td>
              {{test.text16}}
     </td>
   </tr>
   <tr>
-    <td><li>Nepiedalījos un neorganizēju</li></td>
+    <td>Nepiedalījos un neorganizēju</td>
     <td>
              {{test.text17}}
     </td>
   </tr>
+</tbody>
 </table>
 <br>
-<table>
+<table class="highlight">
+  <tbody>
   <tr>
-    <th colspan="2">5.Manas pedagoģiskās darbības:</th>
+    <th colspan="2" class="center-align">5.Manas pedagoģiskās darbības:</th>
   </tr>
   <tr>
     <td>Stiprās puses (vizmaz 3)</td>
@@ -225,6 +233,7 @@
              {{test.inputtable6}}
     </td>
   </tr>
+</tbody>
 </table>
 <br>
 <b>6. Šajā mācību gadā biju apņēmies/usies apmeklēt citu kolēģu nodarbības: (nosaukt)</b>
@@ -244,7 +253,8 @@
 {{/if}}
 <br>
 <b>8.Šajā mācību gadā plānotā pedagoģiskās meistarības uzlabošanā veicamo pasākumu izpildes analīze (no iepriekšējā gada pedagogu pārskata)</b>
-<table>
+<table class="highlight">
+  <tbody>
   <tr>
     <td>Šajā mācību gadā plānoju</td>
     <td>Izpildīju (norādīt konkrēti)</td>
@@ -257,12 +267,35 @@
              {{test.textarea81}}
     </td>
   </tr>
+</tbody>
 </table>
 <br>
 <p><b>9.Mani galvenie uzdevumi pedagoģiskā darba kvalitātes uzlabošanā nākamajā mācību gadā mācāmajā priekšmetā vai priekšmetos (obligāti jānorāda konkrēti 1-2 uzdevumi, izmantojot pašvērtējuma 5.punkta vai citus pašvērtējuma aspektus):</b></p>
          {{test.textarea9}}
 <br>
 <br>
-  <b><em>Aizpildīšanas datums: </em></b>
-         {{test.createdAt}}
+  <b>
+    <em>Aizpildīšanas datums: </em>
+  </b>
+  {{test.createdAt}}
+  </div>
+
+  <script>
+  $(document).ready(function() {
+    // Show or hide the sticky footer button
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.go-top').fadeIn(500);
+        } else {
+            $('.go-top').fadeOut(300);
+        }
+    });
+
+    // Animate the scroll to top
+    $('.go-top').click(function(event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 300);
+    })
+  });
+  </script>
 </template>

@@ -1,5 +1,13 @@
 <template name="applicationLayout">
-  {{> Template.dynamic template=top}}
-  {{> Template.dynamic template=main}}
-  {{> Template.dynamic template=bottom}}
+  <body>
+    <header>
+      {{> Template.dynamic template=top}}
+    </header>
+    <main>
+      {{> Template.dynamic template=main}}
+    </main>
+    <footer>
+      {{> Template.dynamic template=bottom}}
+    </footer>
+  </body>
 </template>

@@ -1,20 +1,34 @@
-<template name="register">
-
-      <form>
-        <h4>Reģistrēties</h4>
+<template name="Register">
+  <div class="container">
+    <div class="row">
+      <form id="register-form" class="col s9 l4 offset-s1 offset-l4">
+        <h2 class="thin">Reģistrācija</h2>
         <div class="row">
           <!-- E-mail -->
+          <div class="input-field col s9 l9 offset-s1 offset-l1">
             <i class="material-icons prefix">account_circle</i>
-            <label for="email2" data-error="E-pasta struktūrai jābūt: example@example.com">E-pasts</label>
-            <input id="email2" type="email" class="validate"/>
+             <input id="email2" type="email" class="validate">   <!--icon_prefix -->
+            <label for="email2" data-error="E-pasta struktūrai jābūt: example@example.com">E-mail</label>  <!-- icon_prefix -->
             <br><br>
-          <!-- Password -->
-            <i class="material-icons prefix">lock</i>
-            <label for="password2">Parole</label>
-            <input id="password2" type="password" class="validate"/>
-          <!-- Button -->
-          <input style="color: black;" type="submit" class="waves-effect waves-light btn" value="Pieslēgties"/>
           </div>
+          <!-- Password -->
+          <div class="input-field col s9 l9 offset-s1 offset-l1">
+            <i class="material-icons prefix">lock</i>
+            <input id="password2" type="password" class="validate">  <!-- icon_prefix -->
+            <label for="password2">Password</label>  <!-- icon_prefix -->
+          </div>
+          <!-- Button -->
+          <div class="input-field col s9 l5 offset-s3 offset-l3">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Pievienoties
+              <i class="material-icons left">lock_open</i>
+            </button>
+          </div>
+          <br>
+          <div class="input-field col s9 l7 offset-s3 offset-l3">
+            <a href="/login" id="signIn">Jau ir profils? Pieslēgties</a>
+          </div>
+        </div>
       </form>
-
+    </div>
+  </div>
 </template>

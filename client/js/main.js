@@ -91,28 +91,27 @@ Meteor.subscribe("recipes");
               FlowRouter.go('/profile');
             }
         });
+// Register
+        Template.Register.events({  //register template events
+           'submit form': function (event, template){ //apstiprināta forma
+            event.preventDefault();
+            var emailVar = template.find('#email2').value; //saglabā mainīgajā vērtību no input lauka ar atbilsotšo id
+            var passwordVar = template.find('#password2').value; //saglabā mainīgajā vērtību no input lauka ar atbilsotšo id
+            console.log('Form submitted.');
 
-//izveidot account
-  // Template.Register.events({  //register template events
-  //    'submit form': function (event, template){ //apstiprināta forma
-  //     event.preventDefault();
-  //     var emailVar = template.find('#email2').value; //saglabā mainīgajā vērtību no input lauka ar atbilsotšo id
-  //     var passwordVar = template.find('#password2').value; //saglabā mainīgajā vērtību no input lauka ar atbilsotšo id
-  //     console.log('Form submitted.');
-  //
-  //     Accounts.createUser({ //izveido lietotāju ar norādītajiem parametriem
-  //       email: emailVar,
-  //       password: passwordVar
-  //     });
-  //   }
-  // });
+            Accounts.createUser({ //izveido lietotāju ar norādītajiem parametriem
+              email: emailVar,
+              password: passwordVar
+            });
+          }
+  });
 //ielogoties ar account
   Template.Login.events({  //login template events
      'submit form': function (event, template){
       event.preventDefault();
       var emailVar = template.find('#email').value; //saglabā mainīgajā vērtību no input lauka ar atbilsotšo id
       var passwordVar = template.find('#password').value;
-      console.log('Login succesfull!');
+      console.log('Login successful!');
       Meteor.loginWithPassword(emailVar, passwordVar, function(error){ //ielogoties ar mainīgajiem
         if (error) {
           console.log(error.reason);
@@ -130,7 +129,7 @@ Meteor.subscribe("recipes");
       Meteor.logout(function() {
         FlowRouter.go('/login');
       }),
-      console.log('Logging out succesfull!');
+      console.log('Logging out successful!');
     }
   });
 

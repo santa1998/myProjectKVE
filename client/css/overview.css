@@ -1,3 +1,29 @@
 .input-field label {
-     color: #424242;
-   }
+  color: #424242;
+}
+
+table, tr, td {
+  border: 1px solid black;
+}
+th {
+  background-color: #42a5f5;
+}
+
+.go-top {
+    position: fixed;
+    bottom: 0.75em;
+    right: 0.3em;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    padding: 10px;
+    display: none;
+    margin-right: 2%;
+    transition: transform .2s;
+}
+
+.go-top:hover {
+    text-decoration: none;
+    transform: scale(1.4);
+    transition-duration: 0.3s
+}

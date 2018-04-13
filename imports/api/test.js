@@ -11,7 +11,6 @@ if (Meteor.isServer) {
   });
 }
 
-
 //Meteor metodes
  Meteor.methods({
 //pievienot ierakstu db
