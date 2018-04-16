@@ -28,12 +28,27 @@ Meteor.subscribe("recipes");
         });
         console.log("Form submitted");
         return false;
-      },
-      'change input': function(){
-        Session.set('showIcon', true);
       }
     });
-
+//
+    Template.Editdb.events({
+      'submit .old-resolution': function(event){
+        var forma = {};
+        $.each($('#test2-form').serializeArray(), function() {
+          forma[this.name] = this.value;
+        });
+    console.log(forma);
+        event.preventDefault();
+        Meteor.call("updateResolutions", {form: forma}, function(err, res){
+          if (!err) {
+          FlowRouter.go('/dblist');
+            }
+        });
+        console.log("form submitted");
+        return false;
+      }
+    });
+//
         Template.db.helpers({
           test: () => {
            const test = Test.findOne(FlowRouter.current().params.id);
@@ -56,8 +71,8 @@ Meteor.subscribe("recipes");
           },
           'click .increment': function(){
             Test.remove(this._id);
-            }
-        });
+          }
+      });
 
         Template.Header.helpers({
           Recipes(){
