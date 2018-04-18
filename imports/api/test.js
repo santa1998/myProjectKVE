@@ -16,8 +16,8 @@ if (Meteor.isServer) {
       Test.insert(data.form);
     },
     //
-    updateResolutions: function(_id){
-        Test.update(_id, {$set: {"texter" : "abc"}});
+    updateResolutions: function(_id, data){
+        Test.update(_id, {$set: {"data.form.texter" : "data.forma.texter"}});
     }
     //
   });
