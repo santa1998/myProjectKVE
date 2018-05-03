@@ -15,10 +15,10 @@ if (Meteor.isServer) {
       data.form.owner = Meteor.userId();
       Test.insert(data.form);
     },
-    updateResolutions: function(form){
-      Test.update(form._id, {
-    $set: {
-      "form.$.texter": 42,
+    updateResolutions: function(data){
+    //   Test.update(forma._id, {
+    // $set: {
+    //   "data.forma.$.texter": "abc",
         // texter: data.forma.texter,
         // text2: data.forma.text2,
         // text23: data.forma.text23,
@@ -52,9 +52,7 @@ if (Meteor.isServer) {
         // textarea8: data.forma.textarea8,
         // textarea81: data.forma.textarea81,
         // textarea9: data.forma.textarea9,
-        createdAt: new Date(),
-        owner: Meteor.userId(),
-      },
-    });
-  }
+        // createdAt: new Date(),
+        // owner: Meteor.userId(),
+      }
 });
