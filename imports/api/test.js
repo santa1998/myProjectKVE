@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-//izveidot db
+// Create Database Collection
 export const Test = new Mongo.Collection('test');
 
 if (Meteor.isServer) {
