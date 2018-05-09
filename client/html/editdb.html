@@ -4,116 +4,131 @@
   <hr>
   <br>
       <form class="old-resolution" id="test2-form">
+        <input type="hidden" name="createdAt" value="{{test.createdAt}}">
+        <input type="hidden" name="resolution_id" value="{{test._id}}">
         <div class="input-field col s6">
-          <input id="text" type="text" name="texter">
+          <input id="text" type="text" name="texter" value="{{test.texter}}">
           <label for="text">Pedagoga vārds, uzvārds</label>
+
         </div>
 
         <div class="input-field col s6">
-          <input id="texts3" type="text" name="text2">
+          <input id="texts3" type="text" name="text2" value="{{test.text2}}">
           <label for="texts3">Mācību priekšmeti</label>
         </div>
 
         <strong>1. Aktualizētas, papildinātas</strong><br>
         <div class="input-field col s6">
-          <input id="text23" type="text" name="text23">
+          <input id="text23" type="text" name="text23" value="{{test.text23}}">
           <label for="text23">Mācību priekšmetu programmas</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="text3" type="text" name="text3">
+          <input id="text3" type="text" name="text3" value="{{test.text3}}">
           <label for="text3">Kvalifikāciju prakses programma</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="text4" type="text" name="text4">
+          <input id="text4" type="text" name="text4" value="{{test.text4}}">
           <label for="text4">Praktisko mācību programmas</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="text5" type="text" name="text5">
+          <input id="text5" type="text" name="text5" value="{{test.text5}}">
           <label for="text5">Citi</label>
         </div>
 
         <strong>Inovācijas nodarbību norisē(norādīt)</strong>
         <br>
         <div class="input-field col s6">
-          <input id="text6" type="text" name="text6">
+          <input id="text6" type="text" name="text6" value="{{test.text6}}">
           <label for="text6">Teorētiskajās nodarbībās</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="text7" type="text" name="text7">
+          <input id="text7" type="text" name="text7" value="{{test.text7}}">
           <label for="text7">Praktiskajos darbos</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="text8" type="text" name="text8">
+          <input id="text8" type="text" name="text8" value="{{test.text8}}">
           <label for="text8">Patstāvīgajos darbos</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="text9" type="text" name="text9">
+          <input id="text9" type="text" name="text9" value="{{test.text9}}">
           <label for="text9">Praktiskajās mācībās</label>
         </div>
 
         <div class="input-field col s6">
-          <input id="text10" type="text" name="text10">
+          <input id="text10" type="text" name="text10" value="{{test.text10}}">
           <label for="text10">Kvalifikācijas praksē</label>
         </div>
 
         <strong>2. Metodiskais darbs</strong>
         <br>
         <div class="input-field col s6">
-          <input id="text11" type="text" name="text11">
+          <input id="text11" type="text" name="text11" value="{{test.text11}}">
           <label for="text11">Metodiskā materiāla nosaukums</label>
         </div>
         <div class="input-field col s6">
-          <input id="text12" type="text" name="text12">
+          <input id="text12" type="text" name="text12" value="{{test.text12}}">
           <label for="text12">Veids</label>
         </div>
         <div class="input-field col s6">
-          <input id="text13" type="text" name="text13">
+          <input id="text13" type="text" name="text13" value="{{test.text13}}">
           <label for="text13">Pielietojums</label>
         </div>
       <strong>3. Audzēkņu gatavošanās olimpiādēm vai konkursiem (gan ārpusskolas, gan nodaļā)</strong>
       <br>
         <p>
-          <input type="checkbox" id="checkbox1" name="checkbox111"/>
-          <label for="checkbox1">ieguva godalgotas vietas</label>
-          <input id="checkbox1text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox1text">
+          {{#if equals test.checkbox111 'on'}}
+          <i class="material-icons center-align">check</i>
+          {{/if}}
+          <!-- <input type="checkbox" id="checkbox1" name="checkbox111"/> -->
+          <label>ieguva godalgotas vietas</label>
+          <input id="checkbox1text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox1text" value="{{test.checkbox1text}}">
         </p>
         <p>
-          <input type="checkbox" id="checkbox2" name="checkbox222"/>
-          <label for="checkbox2">piedalījās olimpiādē, bet vietu nav</label>
-          <input id="checkbox2text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox2text">
+          {{#if equals test.checkbox222 'on'}}
+          <i class="material-icons center-align">check</i>
+          {{/if}}
+          <!-- <input type="checkbox" id="checkbox2" name="checkbox222"/> -->
+          <label>piedalījās olimpiādē, bet vietu nav</label>
+          <input id="checkbox2text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox2text" value="{{test.checkbox2text}}">
         </p>
         <p>
-          <input type="checkbox" id="checkbox3" name="checkbox333"/>
-          <label for="checkbox3">olimpiāde vai konkurss notika, bet audzēkņus negatavoju</label>
-          <input id="checkbox3text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox3text">
+          {{#if equals test.checkbox333 'on'}}
+          <i class="material-icons center-align">check</i>
+          {{/if}}
+          <!-- <input type="checkbox" id="checkbox3" name="checkbox333"/> -->
+          <label>olimpiāde vai konkurss notika, bet audzēkņus negatavoju</label>
+          <input id="checkbox3text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox3text" value="{{test.checkbox3text}}">
         </p>
         <p>
-          <input type="checkbox" id="checkbox4" name="checkbox444"/>
-          <label for="checkbox4">negatavoju, jo olimpiāde vai konkurss nebija plānots</label>
-          <input id="checkbox4text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox4text">
+          {{#if equals test.checkbox444 'on'}}
+          <i class="material-icons">check</i>
+          {{/if}}
+          <!-- <input type="checkbox" id="checkbox4" name="checkbox444"/> -->
+          <label>negatavoju, jo olimpiāde vai konkurss nebija plānots</label>
+          <input id="checkbox4text" type="text" placeholder="Nosaukums, rezultāts" name="checkbox4text" value="{{test.checkbox4text}}">
         </p>
         <strong>4. Iesaistīšanās PVIN pasākumos</strong>
         <br>
         <div class="input-field col s6">
-          <input id="text14" type="text" name="text14">
+          <input id="text14" type="text" name="text14" value="{{test.text14}}">
           <label for="text14">Pasākumi, kurus organizēju</label>
         </div>
         <div class="input-field col s6">
-          <input id="text15" type="text" name="text15">
+          <input id="text15" type="text" name="text15" value="{{test.text15}}">
           <label for="text15">Pasākumos iesaistījos, piedalījos ar idejām, iniciatīvu, ierosmi</label>
         </div>
         <div class="input-field col s6">
-          <input id="text16" type="text" name="text16">
+          <input id="text16" type="text" name="text16" value="{{test.text16}}">
           <label for="text16">Darīju, ko lika</label>
         </div>
         <div class="input-field col s6">
-          <input id="text17" type="text" name="text17">
+          <input id="text17" type="text" name="text17" value="{{test.text17}}">
           <label for="text17">Nepiedalījos un neorganizēju</label>
         </div>
         <strong>5. Manas pedagoģiskās darbības:</strong>
@@ -124,28 +139,35 @@
             <th>Vājās puses (vismaz 3)</th>
           </tr>
           <tr>
-            <td><input type="text" name="inputtable1"></td>
-            <td><input type="text" name="inputtable2"></td>
+            <td><input type="text" name="inputtable1" value="{{test.inputtable1}}"></td>
+            <td><input type="text" name="inputtable2" value="{{test.inputtable2}}"></td>
           </tr>
           <tr>
-            <td><input type="text" name="inputtable3"></td>
-            <td><input type="text" name="inputtable4"></td>
+            <td><input type="text" name="inputtable3" value="{{test.inputtable3}}"></td>
+            <td><input type="text" name="inputtable4" value="{{test.inputtable4}}"></td>
           </tr>
           <tr>
-            <td><input type="text" name="inputtable5"></td>
-            <td><input type="text" name="inputtable6"></td>
+            <td><input type="text" name="inputtable5" value="{{test.inputtable5}}"></td>
+            <td><input type="text" name="inputtable6" value="{{test.inputtable6}}"></td>
           </tr>
         </table>
-        <p>6. Šajā mācību gadā biju apņēmies/usies apmeklēt citu kolēģu nodarbības:(nosaukt)</p><input type="text" name="input6">
-        <p>Mani secinājumi par redzēto un dzirdēto:</p><input type="text" name="input61">
+        <p>6. Šajā mācību gadā biju apņēmies/usies apmeklēt citu kolēģu nodarbības:(nosaukt)</p><input type="text" name="input6" value="{{test.input6}}">
+        <p>Mani secinājumi par redzēto un dzirdēto:</p><input type="text" name="input61" value="{{test.input61}}">
         <p>7. Vai uzskatāt, ka kolēģu nodarbību apmeklēšana paaugstina Jūsu profesionālo kvalifikāciju?</p>
         <p>
-       <input name="group1" type="radio" id="test1"/>
-      <label for="test1">Jā</label>
+          {{#if equals test.group1 'on'}}
+        <p>Jā</p>
+          {{else}}
+            {{#if equals test.group2 'on'}}
+            <p>Nē</p>
+          {{/if}}
+        {{/if}}
+       <!-- <input name="group1" type="radio" id="test1"/> -->
+      <!-- <label for="test1">Jā</label> -->
        </p>
        <p>
-       <input name="group2" type="radio" id="test2"/>
-       <label for="test2">Nē</label>
+       <!-- <input name="group2" type="radio" id="test2"/>
+       <label for="test2">Nē</label> -->
        </p>
         <p>8. Šajā mācību gadā plānotā pedagoģiskās meistarības uzlabošanā veicamo pasākumu izpildes analīze (no iepriekšējā gada pedagoga pārskata)</p>
         <table>
@@ -154,12 +176,14 @@
             <td>Izpildīju (norādīt konkrēti)</td>
           </tr>
           <tr>
-            <td><textarea id="textarea8" class="materialize-textarea" name="textarea8"></textarea></td>
-            <td><textarea id="textarea81" class="materialize-textarea" name="textarea81"></textarea></td>
+            <td><textarea id="textarea8" class="materialize-textarea" name="textarea8" value="{{test.textarea8}}"></textarea></td>
+            <td><textarea id="textarea81" class="materialize-textarea" name="textarea81" value="{{test.textarea81}}"></textarea></td>
           </tr>
         </table>
         <p>9. Mani galvenie uzdevumi pedagoģiskās darba kvalitātes uzlabošanā nākamajā mācību gadā mācāmajā priekšmetā vai priekšmetos (obligāti jānorāda 1-2 uzdevumi, izmantojot 5.punkta vai citus pašvērtējuma aspektus):</p>
-        <textarea id="textarea9" class="materialize-textarea" name="textarea9"></textarea>
+        <textarea id="textarea9" class="materialize-textarea" name="textarea9" value="{{test.textarea9}}"></textarea>
+        
+        <input id="date" type="hidden" name="date" value="{{test.date}}">
 
       <div class="center-align">
         <button class="btn waves-effect waves-light" type="submit" name="action">Saglabāt

@@ -49,6 +49,16 @@ Meteor.subscribe("recipes");
       }
     });
 
+    Template.Editdb.helpers({
+      test: () => {
+       const test = Test.findOne(FlowRouter.current().params.id);
+       return test;
+     },
+     'equals':  function(a, b) {
+        return a === b;
+      }
+    });
+
         Template.db.helpers({
           test: () => {
            const test = Test.findOne(FlowRouter.current().params.id);
