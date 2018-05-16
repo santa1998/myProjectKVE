@@ -155,7 +155,7 @@ Meteor.subscribe("recipes");
     'click .logout': function(event){
       event.preventDefault();
       Meteor.logout(function() {
-        FlowRouter.go('/login');
+        FlowRouter.go('/register');
       }),
       console.log('Logging out successful!');
     }
