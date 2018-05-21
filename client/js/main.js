@@ -129,8 +129,16 @@ Meteor.subscribe("recipes");
             Accounts.createUser({
               email: emailVar,
               password: passwordVar
-            });
-          }
+            }),
+
+        Meteor.loginWithPassword(emailVar, passwordVar, function(error){
+        if (error) {
+          console.log(error.reason);
+        }else {
+          FlowRouter.go('/');
+        }
+      })
+    }
   });
 
   // Login
