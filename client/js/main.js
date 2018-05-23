@@ -150,7 +150,7 @@ Meteor.subscribe("recipes");
       console.log('Login successful!');
       Meteor.loginWithPassword(emailVar, passwordVar, function(error){
         if (error) {
-          console.log(error.reason);
+          alert("Nepareiza parole un/vai e-pasts");
         }else {
           FlowRouter.go('/');
         }
